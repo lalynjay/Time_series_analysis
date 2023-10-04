@@ -18,11 +18,11 @@ The aim of this project was to .... TS models are .........
 
 The dataset consisted of a csv file obtained from Zillow.
 
-(img marker) ![outcomes](https://github.com/lalynjay/weather_classification/blob/main/images/outcomes.png)
+(img marker) ![outcomes](https://github.com/lalynjay/weather_classification/blob/main/images/pic.png)
 
 (comments)
 
- (Marker) ![months](https://github.com/lalynjay/weather_classification/blob/main/images/months.png)
+ (Marker) ![months](https://github.com/lalynjay/weather_classification/blob/main/images/pic.png)
 
 (comments)
 
