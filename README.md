@@ -23,18 +23,18 @@ The dataset consisted of a csv file obtained from Zillow Housing dataset. Each r
 Most zipcodes follow a similar trend. The housing market bubble and subsequent crash is clear, with growth beginning again around 2012.
 
 
-(recent history) ![outcomes](https://github.com/lalynjay/Time_series_analysis/blob/main/images/history_2102.png)
+(recent history) ![outcomes](https://github.com/lalynjay/Time_series_analysis/blob/main/images/history_2012.png)
 
 With the effects of the housing bubble removed, there now appears to be overall steady growth in the area.
 
 
 # Data Preparation
 
-The csv file was loaded into a dataframe and all unnecessary columns were removed. Additionally, the %ROI from 2012-2018 was calculated for each zipcode and added to the dataframe. In this analysis, 40 zipcodes in the San Jose area will be evaluated. 3 are in San Benito county, and the remaining in Santa Clara county. Average price for all zipcodes in April 2018 was $1.16 million, and average ROI was 127%. 
+The csv file was loaded into a dataframe and all unnecessary rows were removed. Additionally, the %ROI from 2012-2018 was calculated for each zipcode and added to the dataframe. In this analysis, 40 zipcodes in the San Jose area were be evaluated. 3 were in San Benito county, and the remaining in Santa Clara county. Average price for all zipcodes in April 2018 was $1.16 million, and the average ROI was 127%. 
 
 (ROI all zips) ![outcomes](https://github.com/lalynjay/Time_series_analysis/blob/main/images/ROI_all_zips.png)
 
-94089 was the highest growing zipcode by a substantial amount. Roughly half the zipcodes fall above the mean, and half below it. The bottom 7 zipcodes had a negative ROI.
+94089 was the highest growing zipcode by a substantial amount. Roughly half the zipcodes fell above the mean, and half below it. 
 
 (price all zips) ![outcomes](https://github.com/lalynjay/Time_series_analysis/blob/main/images/price_all_zips.png)
 
@@ -42,21 +42,18 @@ The csv file was loaded into a dataframe and all unnecessary columns were remove
 
 # Modeling and Evaluation
 
-The zipcode with the highest 2012-2018 %ROI, 94089, was chosen as the zipcode to explore modeling. The last 2 years were witheld from from the training models and used as test data to evaluate model performance. First, an auto-ARIMA was run to generate optimal parameter values for the SARIMA model. The SARIMA model was then used to predict values from the last 2 years, and those predictions were compared with the actual values in order to evaluate how well the model performed. Then, a similar approach was used to run a Prophet model, whose performance was evaluated by comparing predicted prices with the actual observed values. 
+The zipcode with the highest 2012-2018 %ROI, 94089, was chosen as the zipcode to explore modeling. The last 2 years were witheld from from the training models and used as test data to evaluate model performance. First, a SARIMA (Seasonal Autoregressive Integrated Moving Average) model on the zipcode 94089 was examined. An auto-ARIMA was run to generate optimal parameter values for the SARIMA model. The SARIMA model was then used to predict values from the last 2 years, and those predictions were compared with the actual values in order to evaluate how well the model performed. Then, a similar approach was used to run a Prophet model, whose performance was evaluated by comparing predicted prices with the actual observed values. Since both models take care of trends and seasonality, it was not necessary to make the input data stationary. 
 
-
-First, I am going to examine a SARIMA (Seasonal Autoregressive Integrated Moving Average) model on the zipcode 94089. The SARIMA model takes care of trends and seasonality, so it is not necessary to make the input data stationary. First, an auto ARIMA model was used to generate the optimal p, d, and q values and seasonal order. Those parameters are then used to fit a SARIMA model, which is then used to generate future forecasts.
-
-The Prophet model was developed by Facebook to account for datasets often encountered at Facebook, which typically contain any or all of the following- hourly, daily, or weekly observations with at least a few months of history, multiple seasonality trends, holidays, missing observations, large outliers, and non-linear trends. While the dataset used in this project only has a couple of those qualities, it will be interesting to see how it performs.
-
-For this dataset, the Prophet model was considerably higher performing than the SARIMA model \\$73,000. \\$59,000
+For this dataset, the Prophet model (RMSE of \\$59,000) was considerably higher performing than the SARIMA model (RMSE \\$73,000). Additionally, the confidence interval was slightly narrower for the Prophet model, indicating less uncertainty.
 
 
 (sarima eval) ![outcomes](https://github.com/lalynjay/Time_series_analysis/blob/main/images/sarima_eval.png)
 
+Comparing the results of the last 2 years of actual data with the SARIMA's predicted values after being fit on the training data. The confidence interval is rather wide at the end.
+
 (prophet eval) ![outcomes](https://github.com/lalynjay/Time_series_analysis/blob/main/images/proph_preds.png)
 
-
+Evaluation of the Prophet model. Overall it performed better.
 
 
 # Forecasting
@@ -73,6 +70,7 @@ The zipcodes forecasted to have the highest ROI in the next 3 years are 94086, 9
 
 (top 5) ![outcomes](https://github.com/lalynjay/Time_series_analysis/blob/main//images/top5_ROI.png)
 
+# Conclusions
 
 ## Zipcode 94086:
 - Predicted to grow by 55%
