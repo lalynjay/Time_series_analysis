@@ -44,7 +44,7 @@ The csv file was loaded into a dataframe and all unnecessary rows were removed. 
 
 The zipcode with the highest 2012-2018 %ROI, 94089, was chosen as the zipcode to explore modeling. The last 2 years were witheld from from the training models and used as test data to evaluate model performance. First, a SARIMA (Seasonal Autoregressive Integrated Moving Average) model on the zipcode 94089 was examined. An auto-ARIMA was run to generate optimal parameter values for the SARIMA model. The SARIMA model was then used to predict values from the last 2 years, and those predictions were compared with the actual values in order to evaluate how well the model performed. Then, a similar approach was used to run a Prophet model, whose performance was evaluated by comparing predicted prices with the actual observed values. Since both models take care of trends and seasonality, it was not necessary to make the input data stationary. 
 
-For this dataset, the Prophet model (RMSE of \\$59,000) was considerably higher performing than the SARIMA model (RMSE \\$73,000). Additionally, the confidence interval was slightly narrower for the Prophet model, indicating less uncertainty.
+For this dataset, the Prophet model (RMSE of \$59,000) was considerably higher performing than the SARIMA model (RMSE \$73,000). Additionally, the confidence interval was slightly narrower for the Prophet model, indicating less uncertainty.
 
 
 (sarima eval) ![outcomes](https://github.com/lalynjay/Time_series_analysis/blob/main/images/sarima_eval.png)
@@ -58,19 +58,21 @@ Evaluation of the Prophet model. Overall it performed better.
 
 # Forecasting
 
-I will now calculate the 3 year forecast, along with confidence intervals, for zipcode 94089 using the SARIMA model from above. A linnear upward trend is predicted. The confidence interval is relatively narrow for the first year, but widens considerably by the end of the forecast time period. Even if actual values are on the low end of forecast values, these is still growth predicted in the near future. 
-Using the SARIMA model that was used to predict and forecast future values for 94089 on all relevant zipcodes. The zipcode and corresponding forecasted 3 year ROI were stored in a list, which was sorted and used to make conclusions.
+The 3 year forecast, along with confidence intervals, was then calcultated for zipcode 94089 using the Prophet model from above. A linnear upward trend is predicted. The confidence interval is relatively narrow for the first year, but widens considerably by the end of the forecast time period. Even if actual values are on the low end of forecast values, these is still growth predicted in the near future. 
+The Prophet model was then used to forecast future values for all relevant zipcodes. The zipcode and corresponding forecasted 3 year ROI were stored in a list, which was sorted and used to make conclusions.
 
 (prophet forecast) ![outcomes](https://github.com/lalynjay/Time_series_analysis/blob/main//images/proph_forecast.png)
 
 
 # Recommendations
 
-The zipcodes forecasted to have the highest ROI in the next 3 years are 94086, 95008, 95134, 95117, and 95118. Forecasted 3 year ROI for the top 5 zipcodes range between 51% and 55%. All 5 zipcodes had an average 2018 home value between roughly \\$1.3 and \\$1.9 million, possibly indicating the zipcodes already on the higher end of the price rance are forecasted to grow even more. Sunnyvale had only 2 zipcodes represented, yet one of them was the highest forecasted %ROI. The rest of the zipcodes belonged to San Jose.
+The zipcodes forecasted to have the highest ROI in the next 3 years are 94086, 95008, 95134, 95117, and 95118. Forecasted 3 year ROI for the top 5 zipcodes ranged between 51% and 55%. All 5 zipcodes had an average 2018 home value between roughly \$1.3 and \$1.9 million, possibly indicating the zipcodes already on the higher end of the price rance are forecasted to grow even more. Sunnyvale had only 2 zipcodes represented, yet one of them was the highest forecasted %ROI. The rest of the zipcodes belonged to San Jose.
 
 (top 5) ![outcomes](https://github.com/lalynjay/Time_series_analysis/blob/main//images/top5_ROI.png)
 
 # Conclusions
+
+Given the growth the area has seen in the last decade, any of the above 5 zipcodes would be a good investment choice. A brief summary about each zipcode is provided below. Statistics sourced from https://www.zipdatamaps.com/   
 
 ## Zipcode 94086:
 - Predicted to grow by 55%
@@ -104,6 +106,7 @@ The zipcodes forecasted to have the highest ROI in the next 3 years are 94086, 9
 
 (map) ![outcomes](https://github.com/lalynjay/Time_series_analysis/blob/main/images/map.png)
 
+Relative location of the top 5 zipcodes
 
 # Next Steps and Limitations:
 
