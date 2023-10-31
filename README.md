@@ -1,12 +1,15 @@
 # Forecasting Real Estate Value in San Jose, CA
 
 
+## Using Time Series Analysis to Predict Future Values
+
+
 ### Lynn Anderson
 
 
 # Overview
 
-The objective of this project was to use time Series analysis to build a model that accurately predict future real estate values in San Jose, CA. Specifically, I sought to identify which zipcodes are forecasted to provide the highest return on investment in the next 3 years. I investigated the performance of a SARIMAX model and Prophet model on one zipocde, and subsequently selected the higher performing model to forecast future real estate values on all relevant zipcodes.
+The objective of this project was to use time series analysis to build a model that accurately predict future real estate values in San Jose, CA. Specifically, I sought to identify which zipcodes are forecasted to provide the highest return on investment in the next 3 years. I investigated the performance of a SARIMAX model and Prophet model on one zipocde, and subsequently selected the higher performing model to forecast future real estate values on all relevant zipcodes.
 
 
 # Business Understanding
