@@ -124,7 +124,7 @@ Relative location of the top 5 zipcodes
 
 # For More Information
 
-See the full analysis in the [Jupyter Notebook](https://github.com/lalynjay/Time_series_analysis/blob/main/Time_series_analysis.ipynb) or review [this presentation](https://github.com/lalynjay/weather_classification/blob/main/weather_classification.pdf)
+See the full analysis in the [Jupyter Notebook](https://github.com/lalynjay/Time_series_analysis/blob/main/Time_series_analysis.ipynb) or review [this presentation](https://github.com/lalynjay/Time_series_analysis/blob/main/ts_presentation.pdf)
 
 For additional info, contact Lynn Anderson at lalynjay@gmail.com
 
