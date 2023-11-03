@@ -21,12 +21,12 @@ An investment company is looking to invest in real estate in the San Jose metro 
 
 The dataset consisted of a csv file obtained from Zillow Housing dataset. Each record represented a zipcode, with information including the city, metro area, county and state, as well as the average sale price of real estate taken at one month intervals. The original dataset consisted of records from 14,723 zip codes across all 50 states and DC, and spanned April 1996- April 2018. The data used in this project only looked at zip codes in the San Jose metro area. Additionally, to minimize the effects of the 2008 crash and model for more recent trends, only data from 2012 onwards was used for modeling.
 
-(zipcode history) ![outcomes](https://github.com/lalynjay/Time_series_analysis/blob/main/images/history_all_years.png)
+![zipcode history](https://github.com/lalynjay/Time_series_analysis/blob/main/images/history_all_years.png)
 
 Most zipcodes follow a similar trend. The housing market bubble and subsequent crash is clear, with growth beginning again around 2012.
 
 
-(recent history) ![outcomes](https://github.com/lalynjay/Time_series_analysis/blob/main/images/history_2012.png)
+![recent history](https://github.com/lalynjay/Time_series_analysis/blob/main/images/history_2012.png)
 
 With the effects of the housing bubble removed, there now appears to be overall steady growth in the area.
 
@@ -35,11 +35,11 @@ With the effects of the housing bubble removed, there now appears to be overall 
 
 The csv file was loaded into a dataframe and all unnecessary rows were removed. Additionally, the %ROI from 2012-2018 was calculated for each zipcode and added to the dataframe. In this analysis, 40 zipcodes in the San Jose area were be evaluated. 3 were in San Benito county, and the remaining in Santa Clara county. Average price for all zipcodes in April 2018 was $1.16 million, and the average ROI was 127%. 
 
-(ROI all zips) ![outcomes](https://github.com/lalynjay/Time_series_analysis/blob/main/images/ROI_all_zips.png)
+![ROI all zips](https://github.com/lalynjay/Time_series_analysis/blob/main/images/ROI_all_zips.png)
 
 94089 was the highest growing zipcode by a substantial amount. Roughly half the zipcodes fell above the mean, and half below it. 
 
-(price all zips) ![outcomes](https://github.com/lalynjay/Time_series_analysis/blob/main/images/price_all_zips.png)
+![price all zips](https://github.com/lalynjay/Time_series_analysis/blob/main/images/price_all_zips.png)
 
 94086, the second highest performing zipcode in terms of ROI, had the highest average home value. 
 
@@ -50,11 +50,11 @@ The zipcode with the highest 2012-2018 %ROI, 94089, was chosen as the zipcode to
 For this dataset, the Prophet model (RMSE of \$59,000) was considerably higher performing than the SARIMA model (RMSE \$73,000). Additionally, the confidence interval was slightly narrower for the Prophet model, indicating less uncertainty.
 
 
-(sarima eval) ![outcomes](https://github.com/lalynjay/Time_series_analysis/blob/main/images/sarima_eval.png)
+![sarima eval](https://github.com/lalynjay/Time_series_analysis/blob/main/images/sarima_eval.png)
 
 Comparing the results of the last 2 years of actual data with the SARIMA's predicted values after being fit on the training data. The confidence interval is rather wide at the end.
 
-(prophet eval) ![outcomes](https://github.com/lalynjay/Time_series_analysis/blob/main/images/proph_preds.png)
+![prophet eval](https://github.com/lalynjay/Time_series_analysis/blob/main/images/proph_preds.png)
 
 Evaluation of the Prophet model. Overall it performed better.
 
@@ -64,14 +64,14 @@ Evaluation of the Prophet model. Overall it performed better.
 The 3 year forecast, along with confidence intervals, was then calcultated for zipcode 94089 using the Prophet model from above. A linnear upward trend is predicted. The confidence interval is relatively narrow for the first year, but widens considerably by the end of the forecast time period. Even if actual values are on the low end of forecast values, these is still growth predicted in the near future. 
 The Prophet model was then used to forecast future values for all relevant zipcodes. The zipcode and corresponding forecasted 3 year ROI were stored in a list, which was sorted and used to make conclusions.
 
-(prophet forecast) ![outcomes](https://github.com/lalynjay/Time_series_analysis/blob/main//images/proph_forecast.png)
+![prophet forecast](https://github.com/lalynjay/Time_series_analysis/blob/main//images/proph_forecast.png)
 
 
 # Recommendations
 
 The zipcodes forecasted to have the highest ROI in the next 3 years are 94086, 95008, 95134, 95117, and 95118. Forecasted 3 year ROI for the top 5 zipcodes ranged between 51% and 55%. All 5 zipcodes had an average 2018 home value between roughly \$1.3 and \$1.9 million, possibly indicating the zipcodes already on the higher end of the price rance are forecasted to grow even more. Sunnyvale had only 2 zipcodes represented, yet one of them was the highest forecasted %ROI. The rest of the zipcodes belonged to San Jose.
 
-(top 5) ![outcomes](https://github.com/lalynjay/Time_series_analysis/blob/main//images/top5_ROI.png)
+![top 5](https://github.com/lalynjay/Time_series_analysis/blob/main//images/top5_ROI.png)
 
 # Conclusions
 
@@ -107,7 +107,7 @@ Given the growth the area has seen in the last decade, any of the above 5 zipcod
 - population of 33,000
 - 11,200 households
 
-(map) ![outcomes](https://github.com/lalynjay/Time_series_analysis/blob/main/images/map.png)
+![map](https://github.com/lalynjay/Time_series_analysis/blob/main/images/map.png)
 
 Location of the top 5 zipcodes. The leftmost point is located in Sunnyvale, the rest in San Jose.
 
