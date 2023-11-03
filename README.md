@@ -109,7 +109,7 @@ Given the growth the area has seen in the last decade, any of the above 5 zipcod
 
 (map) ![outcomes](https://github.com/lalynjay/Time_series_analysis/blob/main/images/map.png)
 
-Relative location of the top 5 zipcodes
+Location of the top 5 zipcodes. The leftmost point is located in Sunnyvale, the rest in San Jose.
 
 # Next Steps and Limitations:
 
