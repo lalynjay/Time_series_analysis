@@ -47,7 +47,7 @@ The csv file was loaded into a dataframe and all unnecessary rows were removed. 
 
 The zipcode with the highest 2012-2018 %ROI, 94089, was chosen as the zipcode to explore modeling. The last 2 years were witheld from from the training models and used as test data to evaluate model performance. First, a SARIMA (Seasonal Autoregressive Integrated Moving Average) model on the zipcode 94089 was examined. An auto-ARIMA was run to generate optimal parameter values for the SARIMA model. The SARIMA model was then used to predict values from the last 2 years, and those predictions were compared with the actual values in order to evaluate how well the model performed. Then, a similar approach was used to run a Prophet model, whose performance was evaluated by comparing predicted prices with the actual observed values. Since both models take care of trends and seasonality, it was not necessary to make the input data stationary. 
 
-For this dataset, the Prophet model (RMSE of \$59,000) was considerably higher performing than the SARIMA model (RMSE \$73,000). Additionally, the confidence interval was considerably narrower for the Prophet model, (about \\$300k for the prophet vs over \\$500k for the SARIMA by the end of the preticted time period) indicating less uncertainty.
+For this dataset, the Prophet model (RMSE of \$59,000) was considerably higher performing than the SARIMA model (RMSE \$73,000). Additionally, the confidence interval was considerably narrower for the Prophet model, (about \$300k for the prophet vs over \$500k for the SARIMA by the end of the predicted time period) indicating less uncertainty.
 
 
 ![sarima eval](https://github.com/lalynjay/Time_series_analysis/blob/main/images/sarima_eval.png)
